@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    // Declare variables x, i, and f to store user input, loop counter, and factorial respectively.
+    int x, i;
+    unsigned long long int f = 1;
+
+    // Prompt the user to enter an integer.
+    printf("Enter the integer\n");
+
+    // Read the integer input from the user.
+    scanf("%d", &x);
+
+    // Use a for loop to calculate the factorial of the entered integer.
+    for (i = x; i != 0; i--) {
+        // Multiply the current factorial value (f) by the loop counter (i).
+        f = f * i;
+    }
+
+    // Print the calculated factorial using the correct format specifier.
+    printf("Factorial of %d is %llu\n", x, f);
+
+    return 0;
+}
