@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+// Function prototype for the power function
+long long int power(int x, int y);
+
+int main() 
+{
+    // Declare variables
+    int x, y;
+    long long int result;
+
+    // Prompt the user for input
+    printf("Enter the integer values:\n");
+
+    // Read two integers from the user, and check if input is valid
+    if (scanf("%d%d", &x, &y) != 2) 
+    {
+        // Print an error message if input is not valid
+        printf("Invalid input. Please enter valid integers.\n");
+        return 1; // Exit with an error code
+    }
+
+    // Call the power function and store the result
+    result = power(x, y);
+
+    // Display the result
+    printf("%d ^ %d = %lld\n", x, y, result);
+
+    return 0; // Exit successfully
+}
+
+// Function to calculate x raised to the power of y
+long long int power(int x, int y) 
+{
+    long long int result = 1;
+
+    // Check if the exponent is negative
+    if (y < 0) 
+    {
+        // Print an error message and return -1 if negative exponent is not supported
+        printf("Error: Negative exponent not supported.\n");
+        return -1; // Indicate an error
+    }
+
+    // Loop to multiply x by itself y times
+    for (int i = 0; i < y; i++) {
+        result *= x;
+    }
+
+    // Return the calculated result
+    return result;
+}
