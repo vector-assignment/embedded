@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() 
+{
+    int num;
+    int ogNum, revNum = 0, rem;
+
+    // Input from user
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    // Save the original number
+    ogNum = num;
+
+    // Reverse the digits of the number
+    while (num > 0) 
+    {
+        rem = num % 10;
+        revNum = revNum * 10 + rem;
+        num /= 10;
+    }
+
+    // Print the reversed number
+    printf("After reversing number = %d\n", revNum);
+
+    // Check if the original number is equal to the reversed number
+    if (ogNum == revNum)
+    {
+        printf("%d is a palindrome.\n", ogNum);
+    } 
+    else 
+    {
+        printf("%d is not a palindrome.\n", ogNum);
+    }
+
+    return 0;
+}
