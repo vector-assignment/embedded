@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    // Initialize variables x, y, z, and N to hold Fibonacci sequence values and user input.
+    int x = 0, y = 1, z, N;
+
+    // Prompt the user to enter the value of N.
+    printf("Enter the N value\n");
+    
+    // Read the value of N from the user.
+    scanf("%d", &N);
+
+    // Use a while loop to generate Fibonacci numbers until x reaches or exceeds N.
+    while (x <= N)
+    {
+        // Calculate the next Fibonacci number.
+        z = x + y;
+
+        // Print the current Fibonacci number.
+        printf("%d ", x);
+
+        // Update the values of x and y for the next iteration.
+        x = y;
+        y = z;
+    }
+
+    // The program completes.
+    return 0;
+}
