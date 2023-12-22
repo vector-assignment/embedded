@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    
+    int x, y,i,pow=1;
+
+    printf("Enter the integer values\n");
+
+    scanf("%d%d", &x, &y);
+
+    for (i=1;i<=y;i++) 
+    {
+        pow = pow * x;
+    }
+
+    printf("%d ^ %d = %d\n", x,y,pow);
+
+    return 0;
+}
