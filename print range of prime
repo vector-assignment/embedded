@@ -1,29 +1,65 @@
 #include <stdio.h>
+
+// Function prototype for the 'prime' function
 int prime(int);
-int main()
+
+// Main function
+int main() 
 {
-    int n1,n2,j,temp=0;
-    printf("enter the range\n");
-    scanf("%d%d",&n1,&n2);
-    if(n1<n2)
-    for(j=n1;j<=n2;j++)
+    // Declare variables
+    int n1, n2;
+
+    // Prompt the user to enter the range
+    printf("Enter the range: ");
+    scanf("%d%d", &n1, &n2);
+
+    // Check if the range is valid (both values should be greater than 2)
+    if (n1 < 2 || n2 < 2) 
+        printf("The range should be greater than 2\n");
+    else if (n1 < n2) 
     {
-    prime(n1);
-    if(temp==0)
-    printf("%d ",n1);
+        // Loop for increasing range
+        for (n1; n1 <= n2; n1++) 
+        {
+            // Call the 'prime' function for each number in the range
+            prime(n1);
+        }
     }
     else
-    for(j=n1;j>=n2;j--)
     {
-    prime(n1);
-    if(temp==0)
-    printf("%d ",n1);
+        // Loop for decreasing range
+        for (n1; n1 >= n2; n1--)
+        {
+            // Call the 'prime' function for each number in the range
+            prime(n1);
+        }
+    }
+
+    return 0;  // Return 0 to indicate successful execution
+}
+
+// Function to check if a number is prime and print it if it is
+int prime(int num)
+{
+    // Declare variables
+    int i, temp = 0;
+
+    // Loop to check for divisibility from 2 to (num - 1)
+    for (i = 2; i != num; i++) 
+    {
+        // Check if 'num' is divisible by 'i'
+        if (num % i == 0) 
+        {
+            // If divisible, set 'temp' to 1 (indicating that the number is not prime)
+            temp = 1;
+        }
+    }
+
+    // Check the value of 'temp' to determine if the number is prime or not
+    if (temp != 1)
+    {
+        // If 'temp' is not 1, the number is prime, so print it
+        printf("%d ", num);
     }
 }
-int prime(n1)
-{
-    int i,num,temp=0;
-    for(i=2;i!=num;i++)
-    if(num%i==0)
-    temp=1;
-}
+
