@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    int num, temp = 0, i;
+
+    // Prompt the user to enter an integer number
+    printf("Enter the integer number: ");
+    scanf("%d", &num);
+
+    // Loop to check for divisibility from 2 to (num - 1)
+    for (i = 2; i != num; i++) {
+        // Check if 'num' is divisible by 'i'
+        if (num % i == 0) {
+            // If divisible, set 'temp' to 1 (indicating that the number is not prime)
+            temp = 1;
+        }
+    }
+
+    // Check the value of 'temp' to determine if the number is prime or not
+    if (temp == 0) {
+        // If 'temp' is 0, the number is prime
+        printf("%d is prime\n", num);
+    } else {
+        // If 'temp' is not 0, the number is not prime
+        printf("%d is not prime\n", num);
+    }
+
+    return 0;  // Return 0 to indicate successful execution
+}
